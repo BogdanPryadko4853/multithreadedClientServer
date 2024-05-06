@@ -30,6 +30,8 @@ public class Server {
                     writer.write("Hello from server" + request.length());
                     writer.newLine();
                     writer.flush();
+                }catch (NullPointerException e) {
+                    e.printStackTrace();
                 }
         } catch (IOException e) {
             throw new RuntimeException(e);
