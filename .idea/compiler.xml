@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Client" />
         <module name="SimpleServer" />
+        <module name="Phone" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,8 +1,9 @@
 package serverStart;
 
-import java.io.*;
+import org.example.Phone;
+
+import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 
 public class Server {
 
@@ -12,24 +13,10 @@ public class Server {
             System.out.println("Server started" + serverSocket);
 
             while (true)
-                try (
-                        Socket socket = serverSocket.accept();
-                        BufferedWriter writer =
-                                new BufferedWriter(
-                                        new OutputStreamWriter(
-                                                socket.getOutputStream()));
-
-                        BufferedReader bufferedReader =
-                                new BufferedReader(
-                                        new InputStreamReader(
-
-                                                socket.getInputStream()))
-                ) {
-                    String request = bufferedReader.readLine();
-
-                    writer.write("Hello from server" + request.length());
-                    writer.newLine();
-                    writer.flush();
+                try (Phone phone = new Phone(serverSocket)) {
+                    String request = phone.readLine();
+                    String response = (int)(Math.random()*30 - 10)+ "";
+                    phone.writeLine(response);
                 }catch (NullPointerException e) {
                     e.printStackTrace();
                 }
