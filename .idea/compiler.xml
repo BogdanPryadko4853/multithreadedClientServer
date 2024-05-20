@@ -8,8 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Client" />
         <module name="SimpleServer" />
-        <module name="Phone" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Phone" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

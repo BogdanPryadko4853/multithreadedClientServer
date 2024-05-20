@@ -1,7 +1,6 @@
 package org.example;
 
-import java.io.*;
-import java.net.Socket;
+import java.io.IOException;
 
 public class Client {
     public static void main(String[] args) {

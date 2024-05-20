@@ -1,7 +1,5 @@
 package serverStart;
 
-import org.example.Phone;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 
